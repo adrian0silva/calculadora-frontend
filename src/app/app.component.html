@@ -1,0 +1,72 @@
+<style>
+  button {
+    background: greenyellow;
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    color:black;
+    margin-left: 70px;
+    margin-top: 20px;
+  }
+  button:hover {
+    height: 50px;
+    width: 180px;
+    background: green;
+    color: aliceblue;
+    transition: ease all 2s;
+  }
+  h1 {
+    color: aliceblue;
+  }
+  h2 {
+    background:lawngreen;
+  }
+  label {
+    color: aliceblue;
+  }
+  #meio {
+    position:absolute; 
+    height: 40%; 
+    left:500px;
+    top:200px; 
+    background:blueviolet; 
+    border: 2px solid black; 
+    border-radius: 20px;
+  }
+</style>
+    
+
+<div style="background:coral; height:1000px">
+  <div id="meio">
+    <h1>Calculadora</h1>
+
+    <div >
+      <label for="numeroUm">Informe o numero 1</label>
+      <input id="numeroUm" type="number" [(ngModel)]='numeroUm'>
+    </div>
+    <div >
+      <label for="numeroDois">Informe o numero 2</label>
+      <input id="numeroDois" type="number" [(ngModel)]='numeroDois'>
+    </div>
+
+    <div >
+      <label for="operacao">Informe a operacao</label>
+      <select id="operacao" [(ngModel)]='operacao'>
+        <option value="SOMA">Operacao de soma</option>
+        <option value="SUBTRACAO">Operacao de subtracao</option>
+        <option value="MULTIPLICACAO">Operacao de multiplicacao</option>
+        <option value="DIVISAO">Operacao de divisao</option>
+      </select>
+    </div>
+
+    <div>
+      <button (click)="onClickExecutarOperacao()">Executar operacao</button>
+    </div>
+
+    <div>
+      <h2>Resultado: {{response.resultado}}</h2>
+    </div>
+
+    <!-- numeroUm: {{numeroUm}} - numeroDois: {{numeroDois}} - operacao: {{operacao}} -->
+  </div>
+</div>
